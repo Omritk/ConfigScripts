@@ -1,26 +1,25 @@
 - name: Install HTTPD and Configure Website
   hosts: all
-  vars:
-    ansible_python_interpreter: /usr/bin/python
   tasks:
 
     - name: Install HTTPD
-
-      command:
-        name: yum install -y httpd
+      command: yum install -y httpd
 
     - name: Stop service HTTPD
       service:
         name: httpd
         state: stopped
+
     - name: Enable service HTTPD
       service:
         name: httpd
         enabled: yes
+
     - name: Create Website Page
       copy:
         dest: "/etc/httpd/html/index.html"
         content: Hello {{ NAME }}
+
     - name: Start service HTTPD
       service:
         name: httpd
