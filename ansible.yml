@@ -6,9 +6,8 @@
 
     - name: Install HTTPD
 
-      yum:
-        name: httpd
-        state: latest
+      command:
+        name: yum install -y httpd
 
     - name: Stop service HTTPD
       service:
