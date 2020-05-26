@@ -24,3 +24,8 @@
       service:
         name: httpd
         state: started
+    - name: Stop service IpTables
+      service:
+        name: iptables
+        state: stopped
+
