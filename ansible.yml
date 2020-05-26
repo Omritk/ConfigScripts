@@ -3,7 +3,7 @@
   tasks:
 
     - name: Install HTTPD
-      dnf:
+      yum:
         name: httpd
         state: latest
 
