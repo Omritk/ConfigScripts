@@ -1,8 +1,11 @@
 - name: Install HTTPD and Configure Website
   hosts: all
+  vars:
+    ansible_python_interpreter: /usr/bin/python
   tasks:
 
     - name: Install HTTPD
+
       yum:
         name: httpd
         state: latest
